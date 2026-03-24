@@ -1,9 +1,9 @@
-import gitLogo from "../../assets/images/logo 1.svg";
+import logo from "../../assets/images/logo 1.svg";
 
 export const Logo = () => {
     return (
         <a href=''>
-            <img src={gitLogo} alt='logo'/>
+            <img src={logo} alt='logo' />
         </a>
     );
 };

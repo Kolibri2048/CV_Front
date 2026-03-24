@@ -1,14 +1,29 @@
-import gitIcon from "../../assets/icons/Git.svg";
-import gitTwit from "../../assets/icons/Twit.svg";
-import gitLink from "../../assets/icons/Link.svg";
+import {Icon} from "../icon/Icon.tsx";
+
+
+type socialLinksSvgType = {
+    id: string,
+    url: string,
+}
 
 export const SocialLinks = () => {
+
+    const socialLinks:socialLinksSvgType[] = [
+        { id: "gitSvg", url: "#" },
+        { id: "twitSvg", url: "#" },
+        { id: "LinkSvg", url: "#" },
+    ];
+
     return (
-        <>
-            <li><a href=""><img src={gitIcon} alt=''/></a></li>
-            <li><a href=""><img src={gitTwit} alt=''/></a></li>
-            <li><a href=""><img src={gitLink} alt=''/></a></li>
-        </>
+        <ul>
+            {socialLinks.map((item) => (
+                <li key={item.id}>
+                    <a href={item.url}>
+                        <Icon iconId={item.id} width={'30px'} height={'30px'} />
+                    </a>
+                </li>
+            ))}
+        </ul>
     );
 };
 
